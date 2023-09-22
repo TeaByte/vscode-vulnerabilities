@@ -15,7 +15,6 @@ export default function Nav() {
               alt="logo"
               width={35}
               height={35}
-              className="hidden dark:block"
             />
             Vulnerabilities
           </div>
