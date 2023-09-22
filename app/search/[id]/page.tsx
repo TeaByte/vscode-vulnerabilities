@@ -6,13 +6,12 @@ import Extensions from '@/components/extensions';
 import Search from '@/components/search';
 
 export default async function SearchPage({ params }: ParamsProps) {
-  const searchTerm = decodeURIComponent(params.id).toLowerCase();
+  const searchTerm = decodeURIComponent(params.id);
   const extensions = await prisma.extensions.findMany({
     where: {
       OR: [
-        {extensionname: {contains: searchTerm}},
-        {sourcecode: {contains: searchTerm}},
-        {repositoryname: {contains: searchTerm}},
+        {extensionname: {contains: searchTerm, mode: 'insensitive'}},
+        {repositoryname: {contains: searchTerm, mode: 'insensitive'}},
       ],
     },
   });
