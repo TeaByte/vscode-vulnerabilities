@@ -33,7 +33,7 @@ function Vlnerabilities(content: string | null) {
 export default async function DetailsPage({ params }: ParamsProps) {
     const extension = await prisma.extensions.findFirst({
       where: {
-        RepositoryName: params.id,
+        repositoryname: params.id,
       },
     });
     if(extension) 
@@ -42,36 +42,36 @@ export default async function DetailsPage({ params }: ParamsProps) {
             <Card className="w-full">
                 <CardHeader>
                     <CardTitle className="flex gap-1 items-center">
-                        <p >{extension.RepositoryName}</p> 
-                        {extension.Verified === "1" && <VerifiedIcon className="h-4 w-4" />}
+                        <p >{extension.repositoryname}</p> 
+                        {extension.verified && <VerifiedIcon className="h-4 w-4" />}
                     </CardTitle>
                     <CardDescription>
-                        {extension.InstallCount} Installs,
-                        Publisher: {extension.Publisher}
+                        {extension.installcount} Installs,
+                        Publisher: {extension.publisher}
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-4">
-                    <Badge className="w-fit">Total Vulnerabilities ({extension.TotalVulnerabilities})</Badge>
+                    <Badge className="w-fit">Total Vulnerabilities ({extension.totalvulnerabilities})</Badge>
                     <div>
-                        <p>Low Vulnerability ({extension.Low})</p>
-                        {Vlnerabilities(extension.LowVulnerabilityNames)}
+                        <p>Low Vulnerability ({extension.low})</p>
+                        {Vlnerabilities(extension.lowvulnerabilitynames)}
                     </div>
                     <div>
-                        <p>Medium Vulnerability ({extension.Medium})</p>
-                        {Vlnerabilities(extension.MediumVulnerabilityNames)}
+                        <p>Medium Vulnerability ({extension.medium})</p>
+                        {Vlnerabilities(extension.mediumvulnerabilitynames)}
                     </div>
                     <div>
-                        <p>High Vulnerability ({extension.High})</p>
-                        {Vlnerabilities(extension.HighVulnerabilityNames)}
+                        <p>High Vulnerability ({extension.high})</p>
+                        {Vlnerabilities(extension.highvulnerabilitynames)}
                     </div>
                     <div>
-                        <p>Critical Vulnerability ({extension.Critical})</p>
-                        {Vlnerabilities(extension.CriticalVulnerabilityNames)}
+                        <p>Critical Vulnerability ({extension.critical})</p>
+                        {Vlnerabilities(extension.criticalvulnerabilitynames)}
                     </div>
                 </CardContent>
                 <CardFooter className="flex justify-between">
                     <p></p>
-                    <a target="_blank" href={extension.SourceCode || ""}>
+                    <a target="_blank" href={extension.sourcecode || ""}>
                         <Button><GithubIcon/></Button>
                     </a>
                 </CardFooter>

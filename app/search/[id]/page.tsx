@@ -10,9 +10,9 @@ export default async function SearchPage({ params }: ParamsProps) {
   const extensions = await prisma.extensions.findMany({
     where: {
       OR: [
-        {ExtensionName: {contains: searchTerm}},
-        {SourceCode: {contains: searchTerm}},
-        {RepositoryName: {contains: searchTerm}},
+        {extensionname: {contains: searchTerm}},
+        {sourcecode: {contains: searchTerm}},
+        {repositoryname: {contains: searchTerm}},
       ],
     },
   });

@@ -6,13 +6,13 @@ export default async function Extensions({ extensions }: ExtensionsProps) {
     <section className='flex flex-wrap gap-3 justify-center'>
         {extensions.map(extension => (
             <Extension 
-                key={extension.ExtensionName}
-                name={extension.ExtensionName} 
-                repoName={extension.RepositoryName || "N/A"} 
-                repoUrl={extension.SourceCode || "#no-source-code"}
-                InstallCount={extension.InstallCount}
-                isVerified={extension.Verified === "1"}
-                totalVulnerabilities={extension.TotalVulnerabilities}
+                key={extension.extensionname}
+                name={extension.extensionname} 
+                reponame={extension.repositoryname || "N/A"} 
+                repourl={extension.sourcecode || "#no-source-code"}
+                InstallCount={extension.installcount}
+                isVerified={extension.verified}
+                totalVulnerabilities={extension.totalvulnerabilities}
             />
         ))}
     </section>

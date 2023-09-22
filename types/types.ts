@@ -4,8 +4,8 @@ export interface ParamsProps {
 
 export interface ExtensionProps {
     name: string
-    repoName: string
-    repoUrl: string
+    reponame: string
+    repourl: string
     InstallCount: number
     isVerified: boolean
     totalVulnerabilities: number
@@ -13,20 +13,20 @@ export interface ExtensionProps {
 
 export interface ExtensionsProps {
     extensions: {
-        ExtensionName: string;
-        Publisher: string;
-        Verified: string;
-        InstallCount: number;
-        SourceCode: string | null;
-        RepositoryName: string | null;
-        TotalVulnerabilities: number;
-        Critical: number;
-        High: number;
-        Medium: number;
-        Low: number;
-        HighVulnerabilityNames: string | null;
-        MediumVulnerabilityNames: string | null;
-        CriticalVulnerabilityNames: string | null;
-        LowVulnerabilityNames: string | null;
+        extensionname: string;
+        publisher: string;
+        verified: boolean;
+        installcount: number;
+        sourcecode: string | null;
+        repositoryname: string | null;
+        totalvulnerabilities: number;
+        critical: number;
+        high: number;
+        medium: number;
+        low: number;
+        highvulnerabilitynames: string | null;
+        mediumvulnerabilitynames: string | null;
+        criticalvulnerabilitynames: string | null;
+        lowvulnerabilitynames: string | null;
     }[]
 }

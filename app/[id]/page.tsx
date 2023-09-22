@@ -11,12 +11,12 @@ export default async function Home({ params }: ParamsProps) {
   const page = +(params.id) - 1;
   const extensions = await prisma.extensions.findMany({
     where: {
-        TotalVulnerabilities: {
+        totalvulnerabilities: {
           gt: 0
         }
     },
     orderBy: {
-      TotalVulnerabilities: 'desc'
+      totalvulnerabilities: 'desc'
     },
     take: 30,
     skip: page * 30

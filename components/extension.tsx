@@ -19,10 +19,10 @@ export default function Extension(props: ExtensionProps) {
         <CardDescription>{props.InstallCount} Installs, {props.totalVulnerabilities} Vulnerabilities</CardDescription>
       </CardHeader>
       <CardFooter className="flex justify-between">
-        <Link href={'/details/' + props.repoName}>
+        <Link href={'/details/' + props.reponame}>
           <Button variant="outline">More Details</Button>
         </Link>
-        <a target="_blank" href={props.repoUrl}>
+        <a target="_blank" href={props.repourl}>
             <Button><GithubIcon/></Button>
         </a>
       </CardFooter>

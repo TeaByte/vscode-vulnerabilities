@@ -3,24 +3,24 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model extensions {
-  ExtensionName              String @id
-  Publisher                  String
-  Verified                   String
-  InstallCount               Int
-  SourceCode                 String?
-  RepositoryName             String?
-  TotalVulnerabilities       Int
-  Critical                   Int
-  High                       Int
-  Medium                     Int
-  Low                        Int
-  CriticalVulnerabilityNames String?
-  HighVulnerabilityNames     String?
-  MediumVulnerabilityNames   String?
-  LowVulnerabilityNames      String?
+  extensionname              String @id
+  publisher                  String
+  verified                   Boolean
+  installcount               Int
+  sourcecode                 String?
+  repositoryname             String?
+  totalvulnerabilities       Int
+  critical                   Int
+  high                       Int
+  medium                     Int
+  low                        Int
+  criticalvulnerabilitynames String?
+  highvulnerabilitynames     String?
+  mediumvulnerabilitynames   String?
+  lowvulnerabilitynames      String?
 }
